@@ -1,0 +1,404 @@
+                                       Git Installation ,
+
+  syntax :- #git init
+
+  #ls
+
+                                       configuration of  Git :-
+  
+ Syntax for 
+ 
+  #git config --global user.name"raghu"
+ 
+  #git config --global user.email"rvkcnis@gmail.com"
+ 
+  #git config --list
+
+                                       
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout    Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+                                   Git collaboration  access
+
+ It is nothing but git user pushing the code to another git user cross pushing code files accessing
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+                                                Cherry picking
+ Cherry picking in Git is designed to apply some commit from one branch into another branch. It can be done if you eg. made a mistake and committed a change into wrong branch, 
+ but do not want to merge the whole branch. You can just eg. revert the commit and cherry-pick it on another branch.
+ 
+syntax :- #git cherry-pick <commit-hash>
+
+
+
+
+                                       Adding committing pushing :- 
+
+Files  adding into working space to staging area (or) indexing area
+
+   #git add [filename.extension]  
+  To adding the  one file from work space to staging area
+  
+    #git add . (or) git add -A  
+  To adding tho  multi files from working space to staging area
+  
+   #git add -f .  
+  ignore files adding  the forcible to  staging area
+  
+  #git rm -r [file.txt]
+  Remove a file or folder
+  
+To check the current status of git
+
+    #git status  
+  
+  Here shows the untracked files  ('.' It files shows red colour )
+  
+ Files  commit from  staging area (or) indexing area to local repo
+
+   #git commit -m "first commit"  
+  
+To committing the particular file from staging area to local repo 
+   
+    #git commit -m "commit msg"  filename.extension 
+  
+    #git commit -m "commit msg"  file2.txt wave.mp3 
+
+To Amend (or) modifying  the commit message for latest commit only
+   #git commit --amend -m "new  file work added"
+    
+If a file modification happens At a time file add and commit in single line command
+  #git commit -am "new file"
+
+To check commit id and history details
+    
+	#git show (commit id) 
+	
+It shows the commit id 7 characteristics of details
+  
+            A commit, or "revision", is an individual change to a file (or set of files). It's like when you save a file, except with Git,
+            every time you save it creates a unique ID (a.k.a. the "SHA" or "hash") 
+            that allows you to keep record of what changes were made when and by who.
+  
+To check the current status of git
+
+   #git status  Here shows the untracked files 
+  
+  ('.' It files shows green colour )
+                                              
+											  Pushing operations
+
+Files pushing from local repo to central repo 
+
+  #git push origin master 
+  [Here asking the git hub credentials]
+  
+To push changes to remote repository
+  #git push -u origin [branch_name]
+ 
+Files pull from remote to local repo 
+
+  #Git pull origin[branch name]
+
+Pull changes from remote repository 
+
+ #git pull origin [branch name]
+ 
+Adding a remote repository
+
+ #ssh://git@github.com/[user_name]/[repository_name].git
+
+Set a remote origin branch to SSH
+ 
+  #ssh://git@github.com/[user_name]/[repository_name].git
+
+
+To check the current status of git
+
+   #git status  
+   Here shows the untracked files  ('.' It files shows white colour )
+
+                                                       
+
+													   Roll back operations (Undo changes) :-
+
+  #git log --online
+     
+ Roll back from Local repo to staging area 
+  
+  #git reset --soft commit id   [ git reset --soft dood6da]
+ 
+ Roll back from staging area to work space
+  
+  #git reset head file_name   [ git reset head file1.txt]
+ 
+ Roll back from  Local repo to workspace 
+  
+  #git reset --mixed commit id   [ git reset --mixed dood6da]
+ 
+  Roll back from remote repo to local repo
+  #git reset --hard <commit-hash>
+  #git push -f origin master
+  
+  
+  
+                                             History Deletion
+    
+	Three types of history deletion are thire
+	
+	1   soft
+	   
+	2   mixed
+	   
+	3   hard
+  
+  1 soft :-
+  
+  
+  2 Mixed :-
+  
+  
+  3 Hard :-
+  
+  #git reset --hard commit id
+  
+  
+                                           Git ignore files or folders :-
+
+  #touch .gitignore  
+  
+  
+  
+                                          To check the log history :-
+ 
+  #git log 
+  It shows the history of (or) committed logs
+  
+  #git log --online 
+  To displays the online commit msgs 
+  
+  #git log --2
+  To displays the latest 2commit msgs 
+  
+  #git log --N
+  To displays the latest N commit msgs 
+  
+ To check the particular user commit history  
+  #git log --Author=raghuveergithub
+  
+ To check the particular user particular commit history  
+  #git log --Author=raghuveergithub - 2 no of logs
+
+ To check the particular date wise  commit history  
+  #git log --since=2018-02-01
+  
+  #git log --untill=2018-02-01 
+  up to this date(2018-02-01)
+
+  #git log --online --decorate 
+
+
+                                               Branch operations :- 
+  
+ To list branches in working directory
+ 
+  #git branch -a     (list all branches local and remote)
+ 
+  #git branch -r   (Displays all local in remote)
+ 
+ To check the current branches in the git 
+ 
+  #git branch 
+ 
+ To create the branch in  the git
+ 
+  #git branch [branch name]
+ 
+ To create new branch and switch to it
+ 
+  #git checkout -b [branch name]
+
+ To create branch in remote and switch to it
+ 
+  #git checkout -b [branch name]origin /[branch name] 
+ 
+ One branch to another branch switch 
+ 
+  #git checkout [branch name]
+ 
+                                                            Merge operations :-
+To merge  a branch into the active branch
+
+ #git merge [branch name]  
+  
+To merge  a branch into the active branch  
+  
+ # git [source_branch] [target_branch]
+  
+To check the difference between the two branches  
+
+ #git diff [source_branch] [target]															
+				
+To conflicts
+				
+#git merge abort 
+ 
+ 
+                                                            Deletion operations :--
+
+ Deleting the branch 
+ 
+  #git branch -d [branch name]
+ 
+ Deleting a branch from remote  
+   
+  #git push origin --delete [branch name]
+
+
+                                                     Search operation :-
+ To search the working directory for too
+													 
+ #git grep "too"
+													 
+
+                                                     stash operation :-
+
+what is stash 
+
+ stash is temporary area under the git 
+ 
+why stash 
+
+to store temporary files
+
+How we use stash
+
+what are the conditions to store the files in to stash area
+the files must and should in the cache/staging area
+
+what are the commands use to store the data in the stash ?
+
+#git stash save <"msg">
+
+#git stash list 
+
+stash0  -----first stash saved file
+stash1  -----first stash saved file
+
+what are the commands use to copy the data into branches ?
+
+#git stash apply <stash@>
+
+what are the commands use to copy the data into branches 
+
+#git stash apply <stash@> ----copy paste
+
+#git stash pop <stash@> ----cut paste
+
+How to delete the stash area
+   
+#git stash drop <stash@>
+delete the particular stash file or commit it
+
+#git stash clear 
+delete the entire stash list
+
+
+                             Git Tag operations
+
+Tagging in git or any other vcs refer to creating specific points in host for you repository /data
+
+this is usually done to mark release points  eg[V1.o,V1.1, V1.2 ......]
+
+Why should i create TAGS :-
+
+when even you want a historic points for your project are for your data
+
+ to mark release points for your code /data
+ to create historic restore points of your data
+
+
+Step1:-
+
+   checkout the branch where you want to create the tag
+
+ syntax for tag:
+              # git checkout <branch name>
+              # git checkout master
+
+
+step 2:-
+
+create tag with some name
+           
+		   #git tag <tag name>
+           #git tag v1.o
+ 
+ 
+ created annotated names 
+ 
+      #git tag -av1.o -m "ver 1"
+
+step 3:-
+
+display or show tags
+
+#git tag
+
+#git show v1.0
+
+
+step4 :-
+
+push tags to remote 
+
+#git push origin v1.0
+
+#git push origin --tags
+
+#git push --tags
+
+
+
+step5:-
+
+Delete tags (if required only)
+
+#git tag -d v1.o
+
+#git tag --delete v1.o
+
+#git push origin -d v1.0
+
+#git  push origin --delete v1.o
+
+#git push origin:v1.o
