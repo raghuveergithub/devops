@@ -1,0 +1,307 @@
+ 
+ 
+                                                                 Aws key points
+
+    what is cloud comping
+
+	Types Cloud computing services models
+
+      i)  IAS(Infrastructure as a service)
+	  ii) PASS(Platform as a service)
+	  iii)SASS (SOFTWARE as a service) 
+	  
+	i)  IAS(Infrastructure as a service)
+	  
+	  It provides access to d=fundamental resources such as physical machines, virtual machines, virtual storage etc,   example: amazon web services ,azure services , go-grid
+        =>Iaas  also offers	:
+                             virtual machine disk storage ,virtual local area network(vlans) ,load balancers ,Ip addresses ,software bundles
+           => all these resources are available to end uses via server virtualization 
+	   
+	ii) PASS(Platform as a service)
+	    
+		Pass provides the runtime environment for applications,development & deployment tools etc .  It is using the infrastructure(IAAS) to develop the products
+		developer  are created ide (Integrated development environment)  is pass
+		pass provides the facilities required to support the complete life cycle of building & delivering web applications and services entirely from the  Internet
+		
+		ex: App engines of google    ,force.com ,joyenet , azme
+	
+
+	
+    iii)SASS (SOFTWARE as a service)
+
+    
+	Cloud computing Deployment Models
+	  
+	  i)   Public
+	  ii)  Private
+	  iii) Hybrid
+
+    Types of instances                                (*In aws terms servers are called as instances)
+	 
+	 On demand instances
+	 Reserved instances
+	 Scheduled reserved instances
+	 Spot instances
+	 
+  on demand instances:
+	 1.This instance is one which we usually create.
+	 2.There is no time Commitment
+	 3.No advance payment.
+	 4.You only need to pay for hours which you used
+	 5.Highest cost as there is no commitment.
+	
+  Reserved instances
+	1. For these ,instance there is a time commitment. you buy it for a time frame such as 3/6 Months or 1/3 Year
+	2you need to purchase it via console and it will automatically get applied on your on Demand instances if you are using any of same configuration.
+	3.various payment option like all upfront, No upfront or Partial upfront ,No upfront or Partial upfront
+	4.you get a good discount like 30% to 70 %
+	
+  Spot instances:
+	1.These instance are cheapest one and good for small duration like few hours to few days only.
+	2.Work on bid pricing means you put a bid for instances, and if that instance is available under bid price , it is available for you and if bid price goes higher,Aws will pull the instances automatically.
+    3.Good for one who want to use high processing power at low price and need for minimum duration.
+
+  Dedicated Instances
+    1.Costlier than default shared Instances
+    2.Give better performance as alloted CPU and Memory is not shared with other clients.  
+	
+1)  Ec2                                                                                                              
+     
+	 
+	 a) Instance launching
+	   while launching instance following 7 steps 
+       1) Choose ami
+	      Here choose the required os type (amazon linux64 ,redhat86,ubunt ,Windows servers2k16)
+	   
+       2) choose instance type
+	      Here choose instance configuration type, cpu's , memory ...
+		   
+	   3) configure instance
+          here choose Number of instances , Purchasing option , Network (vpc) ,Subnet () ,IAM role , Shutdown behavior , Monitoring , Tenancy , Advanced Details 
+	   
+	   4) Add storage
+	      Here if you want to  add the extra volume for current configuring instance ,add the volume here
+		  
+	   5) Add tags
+          Here if you want to tagging  the instance          
+
+	   
+	   6) configure security group
+	      Here choose the creating security group or existing security group  for current configuring instance 
+	   
+	   7) Review
+	      You can go back to edit changes for each section. Click Launch to assign a key pair to your instance and complete the launch process.
+		  
+		  select an existing key-pair or creating new key-pair 
+
+
+	
+    B) Configure instance type 
+        
+		increasing or decreasing the instance capacity  (t2.micro to Large )	 
+     
+	 
+	C) Elastic ip
+	           
+			   Assign the private ip  to instance 
+                                                                                                                                                                                                                
+    D) Elastic block storage 
+        
+		Adding    Extra-storage
+		Removing Extra-storage
+		
+    
+	E) Snap shot creation
+          
+		  Snapshot is nothing but  it is a copy of existing elastic block storage backup at the time 
+		  Taking backup custom Elastic block Storage 	
+    
+	F) Snap shot &volume creation      
+          
+		  Snapshot using to  volume creation
+		  
+		  Snapshot using to  image creation
+		  
+		  
+		  
+		  snapshot using to copy volume backup in different locations
+		  
+	G)Region copying snapshots   or Cross region copying        
+     
+	     snapshot using to copy volume backup in different  regions and they are using to  volume creation 
+		
+	     custom ami using other regions in instances creation
+	     click on actions -- copy -- choose destination regions   and image name, description ,
+		 click on modify permissions --- give the other aws a/c number
+	
+	H)Life cycle Manager                      
+      
+       automation of snapshots creation by scheduled time
+	   
+	   It using to creating snapshots scheduled time with tags 
+
+	   
+    I)Ami creation   
+      
+      custom ami  creation using with existing Ami instance 	  
+    
+    J)Region copying amis  or Cross region copying
+    
+	 custom ami using other regions in instances creation
+	 click on actions -- copy ami -- choose destination regions   and image name, description ,
+  
+                                                            
+    K)Elastic load balancer                      
+     i)  classic ELB
+     ii) Application ELB
+     iii)Network ELB
+     Iv ) Target groups
+
+    L)Auto scaling
+     
+	 Lunch configuration 
+     Auto scaling Target groups
+	
+	
+	
+2)Vpc & Networking
+	 
+	  Security groups'
+	  
+	  NACL
+	  
+	  Key-pairs
+	  
+	  Network interfaces
+
+    Vpc
+        sub-netting
+        Route tables
+        Internet-gateway
+        Nat  Gate way
+     
+    Vpc peering
+      
+	  i)another a/c	 
+      ii)another Region
+	  
+3) Identity access management 
+	   
+	   users
+	   
+	   groups
+	   
+	   select aws Access types
+	   
+	   Roles
+	   
+4)Simple storage service (S3)
+	  
+	 a) s3 bucket creation
+	  
+	 b) versioning
+	 
+	 c) s3 life-cycle
+	 
+	 d) life-cycle rules
+	 
+	 e) static Web hosting
+	 
+	 f) Logging
+	 
+	 g) Events 
+	 
+	 
+5)Rout53 
+	  
+	  Route 53 configuring process
+	  
+	  
+	  AWS console ----> go to services -----> Rout53
+	  
+	  step1 
+	       create  the Hosted Zone
+		   hosted zone are classified into 2 types
+           1)Public hosted zone
+           2)Private hosted zone
+           
+	Public hosted zone process
+       click on create hosted 
+	   ----> Domain name :rvinfo.tk
+       Comment  : about the domain
+	   
+	It will be redirected to newly created Hosted zone 
+	In this hosted you will able see all  4  name servers(NS) details  and Start of authority(SOA)
+	
+	
+	   
+                                       									   
+      
+
+
+		   
+	  
+	  domain name rvinfo.tk
+	  
+	  ns-2029.awsdns-61.co.uk. 
+      ns-15.awsdns-01.com. 
+      ns-1359.awsdns-41.org. 
+      ns-700.awsdns-23.net.
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+6)	  RDS installing and configuring
+
+7)Terraforms	
+
+     CloudFormation and Terraform do not only allow you to create your infrastructure from scratch automatically. You can use both tools to update your infrastructure later as well. 
+	 Terraform provides a command named plan which gives you a very detailed overview of what will be modified if you apply your blueprint.
+
+
+	
+8)Cloud watch
+       
+	 a) Cloud watch configuration	  
+	 b) simple notification service (sns)
+     c) simple notification service (sns)
+	 d) simple message service (sms)
+     e) alerts creation
+	 
+	 
+	 
+	Amazon simple queue service (Amazon SQS) is a reliable,highly-scable hosted queue for storing messages they travel between applications or micro services.
+     
+	Amazon sqs moves data between distributed application components help you decouple these components.
+     
+	Amazon simple queue service(SQS) is a fully manged messages queuing service that makes it easy to decouple and micro services, distributed systems and server-less applications.
+    
+	Building applications from individual components that each perform a discrete function improves scalability, and is best practice design for modern applications.
+	
+	SQS makes it simple and cost-effective to decouple and coordinate the components of a cloud application.
+    
+	Using SQS, you can send,store,and receive messages between software components at any volume,without losing messages or requiring other services to be always available pull base systems
+    
+	SQS standard queues offer maximum throughput, best-effort ordering, and at-least-once delivery. 
+	
+	SQS FIFO queues are designed to guarantee that messages are processed exactly once. 
+	
+	In the exact order that they are sent,with limited throughput, you can get started with sqs in a matter of minutes using the aws console or SDK of you choice and just three simple commands . 
+	
+	Sqs lets you eliminate the complexity and overhead associated with managing and operating dedicated messaging software and infrastructure.
+  
+  
+  
+  amazon simple queue service (Amazon SQS) is a reliable,highly-scable hosted queue for storing messages they travel between applications or micro services.
+Amazon sqs moves data between distributed application components help you decouple these components.
+amazon simple queue service(SQS) is a fully manged messages queuing service that makes it easy to decouple and micro services, distributed systems.
+and server-less applications.Building applications from individual components that each perform a discrete function improves scalability, and is best practice 
+design for modern applications.SQS makes it simple and cost-effective to decouple and coordinate the components of a cloud application.
+using SQS, you can send,store,and receive messages between software components at any volume,without losing messages or requiring other services to be always available
+   pull base systems
+SQS standard queues offer maximum throughput, best-effort ordering, and at-least-once delivery. SQS FIFO queues are designed to guarantee that messages are processed exactly once.
+in the exact order that they are sent,with limited throughput,you can get started with sqs in a matter of minutes using the aws console or SDK of you choice and 
+just three simple commands . Sqs lets you eliminate the complexity and overhead associated with managing and operating dedicated messaging software and infrastructure. 
