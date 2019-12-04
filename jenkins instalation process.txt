@@ -1,0 +1,173 @@
+1. open virtual box ---> start vagrant default
+   
+   Go to putty login : 192.168.33.10  
+   user name : vagrant password : vagrant
+
+2. install winscp application
+
+   Go to Winscp login : 192.168.33.10  user name : vagrant password : vagrant
+
+   copy the jenkins.war file to  192.168.33.10 mechine
+
+    (OR)
+
+   wget https://prodjenkinsreleases.blob.core.windows.net/redhat-stable/jenkins-2.150.1-1.1.noarch.rpm
+
+
+3. Go to putty 192.168.33.10 machine
+
+   switch to root 
+   run commands
+   #sudo su 
+   
+   #yum install java-1.8.0-openjdk -y
+   
+   #java -version
+   
+   #which java  
+   
+   #export JAVA_HOME=/bin/java
+   
+   #echo $JAVA_HOME
+   
+   go to browser download  jenkins.war file from jenkins.io ---site
+   
+   click on download --- Generic Java package (.war)[ http://mirrors.jenkins.io/war-stable/latest/jenkins.war ]
+   
+   #cd /opt
+   
+   #wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+
+   #java -jar jenkins.war
+
+    Go to browser  http://hostipadress:8080
+	
+	Go to Linux machine
+	
+	#cat /root/.jenkins/secrets/initialAdminPassword
+    
+	copy the password
+	
+	Go to browser paste the password
+	
+	click on Install suggested plugins
+
+    Create First Admin user	
+	
+	 User name Admin
+	 password  admin
+	 
+	 Continue  as admin
+	 
+	 
+Home Directory of Jenkins:
+
+What is Home Directory of jenkins ?
+  
+  It is a folder/dircetory/place where all the configuration of jenkins server will store.
+  The default location of jenkins home directory is users_home/.jenkins
+  if the user is root then jenkins home is :/root/.jenkins
+  Let suppose user is ec2-user then jenkins home is: /home/ec2-user/.jenkins
+ 
+changing default Home directory of jenkins:
+
+two ways:
+   
+    1.After starting jenkins
+	2.Before starting jenkins
+	
+User defined jenkins home directory is with predefined shell variable called
+JENKINS_HOME
+
+
+
+
+
+
+How to create a job in jenkins
+
+My job is auto deployment with jenkins
+
+Automatically build and deploy an application on application
+server by usinng jenkins:
+Developers
+
+Go to mange jenkins
+
+jenkins -- global tool configuration
+
+
+
+scm:
+    https://github.com/PythonAwsBoto3/webapp.git
+	
+	
+	java -jar jenkins.war --http Port 8090
+	
+	
+	program.xml jenkins.xml --   edit port number 
+	
+	
+	
+	
+	
+what is jenkins ? 
+
+jenkins is an Leading open-source automation tool written in java with plugins built for Continuous Integration (CI) ,Continuous delivery (CD) 
+and deployment purpose in software development.
+
+
+What is Continuous integration, Continuous Delivery and Continuous deployment ?
+It is a software development practice in which we will automatically build , 
+test and deploy software projects every time whenever a developer pushes code change to the repository 
+
+
+Continuous integration
+continuous integration is nothing but part of pulling the code  from the repository building application with help of build tools
+the processes of code changes in the repository and build the application automatically  is called continuous integration
+
+Continuous Integration is a development practice that requires developers to integrate code into a shared repository at regular intervals.
+
+why need continuous integration is to devops
+this concept was  meant to remove the problem of finding later occurrence of issues in the build life-cycle.
+ci requires the developers to have frequent builds the common practice is that whenever a code commit occurs a build should be trigged.
+
+
+without continuous integration what will happen
+so without continuous integration what happens is software basically currently working on something development so you are doing 
+the dev 
+
+Continuous Delivery
+Along with continuous integration if we are able deploy the application in the Test environment 
+It(what ever the package we are created ) is ready to move into the production environment but we are not going to deploy the application on the production environment
+Deploying the product to quality team continuously with approval this not automatic process.  
+
+
+Continuous deployment
+once if the deployment process  and testing process over on test environment then  if we are able to deploy the application in the production environment  
+this entire process called  continuous deployment 
+from the change in the code  if we automatically deploy the application on after the testing on test environment if it is success then we deploy the code into production environment 
+this entire process automatic process that is called deployment
+Deploying the product to customers continuously without approval this automatic process
+	
+Continuous integration, Continuous Delivery and Continuous deployment
+a developer develop the code  After develop the code he will push the code in to the repository git or svn  or any version control system
+build team pull the code from this repository and they will build the application using  with tool like ant or maven
+Along with continuous integration if we are able deploy the application in the Test environment 
+It is ready to move into the production environment but we are not going to deploy the application on the production environment
+
+ 
+Developer check their source code into repo
+Jenkins will pick up the changed source code and trigger a build and run any test if required.
+The build output will be available in the Jenkins dashboards. Automatic notification can also sent back to the developer.
+so, Jenkins is connected to the version control system, build tool , test and production environments, quality analysis tool, testing automation tool etc..
+
+
+
+Advantages of Jenkins :-
+
+It is an open source tool with great community support
+It is easy to install.
+it has 1000+ plug-ins to ease your work. If a plug-in does not exist ,you can code it and share with the community
+it is free of cost.
+it is built with java and hence, it is portable to all the major platforms 
