@@ -1,0 +1,125 @@
+DOS - My First Batch File
+You have heard a lot about DOS and batch files but you just can’t figure out how to create one yourself?
+Learn here how to create your first DOS patch program in a few easy steps.
+ 
+1      General
+2      Create a DOS batch - "hello.bat"
+3      Execute a DOS batch - "hello.bat"
+4      Summary
+5      How to continue from here
+ 
+ 
+1        General
+ 
+DOS batch files are written in plain text.  Any text editor that can store plain text can be used to create a new DOS batch file.
+DOS batch files use the file extension .bat or .cmd.
+In our simple example we will use Notepad to create a batch file right on the desktop.
+The Notepad program is available on all Windows platforms.
+
+2        Create a DOS batch - "hello.bat"
+Description
+
+Use Notepad to create a new file called hello.bat on your desktop.  Add the code shown below to the file and save it.
+This can be done step by step as follows:
+
+Do
+·          In the Start menu click: Programs – Accessories – Notepad
+ 
+
+The Notepad program starts up showing an empty document with the title: “Untitled - Notepad”
+
+Do
+
+·          In the Notepad menu click:  File – Save As
+ 
+
+The Save As dialog shows up
+
+Do
+
+·          In the Save As dialog use the Save in drop down box to select: Desktop
+
+·          In the File name field overwrite the file name by typing: hello.bat
+
+·          Click: Save
+
+ 
+The Save As dialog will close.  Notepad shows an empty document with the title: “hello.bat - Notepad”.  A new icon with the name hello.bat appears on the Desktop.
+
+Do
+
+·          Type or copy/paste the following code into notepad:
+Code
+
+@echo Hello world.
+@pause
+Do
+
+·          In the Notepad menu choose: File - Save
+Congrats
+
+Done!  Your fist DOS batch file is ready to run.
+
+3        Execute a DOS batch - "hello.bat"
+
+Do
+·          Minimize all windows and locate the icon called hello.bat on your desktop.
+·          Double click the hello.bat icon
+ 
+A new window will open showing the following message:
+ 
+Hello world.
+
+Press any key to continue . . .
+
+Do
+
+·          Press any key, e.g. Space
+ 
+The window will close.
+
+Congrats
+
+You just executed your first DOS batch.
+
+4        Summary
+
+ 
+When double clicking hello.bat on the desktop the file was passed to the DOS command processor.  Independent from the executed batch file the command processor will always open a new window.  This window will close when the command processor finished executing the batch file.
+The command processor executes the commands listed in the batch file line by line.  Commands in the batch file can instruct the command processor to interact with the user, i.e. to show some text output in the window or to wait fro keyboard input.
+If not instructed differently the command processor echoes each command from the batch to the window before executing it.  This can be useful for testing and debugging but is usually annoying in the final version of the batch file and because of this omitted in the example by having the ‘@’ sign in front of each line.
+Inside Hello.bat
+The first line instructs the command processor to show the text: “Hello World.”
+The second line instructs the command processor to pause till the user hits a key on the keyboard.
+After pressing a key the batch file finishes and the command processor will close the window.
+Lesson learned
+
+The simple example teaches three features of the command processor.
+·          The echo command displays text on the screen.
+·          The pause command causes the command processor to pause until the user hits a key on the keyboard.
+·          The ‘@’ sign at the beginning of a line prevents the command processor to echo the line on the screen while executing.
+Tip
+
+To turn off the echoing of commands for the whole batch file use the “@echo off” command as first command in the batch file.  The hello.bat example can be rewritten as follows in order to avoid an ‘@’ in front of each line:
+Code
+
+@echo off
+
+echo Hello world.
+
+pause
+
+5        How to continue from here
+ 
+Now you have your first DOS batch running and you may want to know what all you can use it for.
+A whole group of predefined DOS commands is available with your operating system that can be used to enhance this simple example and make a useful application out of it.
+To list all predefined dos commands open a command console and type help.
+This can be done as follows:
+Do
+·          In the Start menu click: Run
+ 
+The Run dialog box opens
+Do
+·          In the Open edit box type: cmd.exe
+ 
+The command console opens reporting the windows version.  A blinking cursor shows up
