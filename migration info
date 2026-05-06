@@ -1,0 +1,83 @@
+successfully completed various assessments for multiple clients
+Good hands and knowledge in migration end to end from On-prem servers to Azure cloud platform
+Azure Site Recovery (ASR) ===rehost (lift and shift)
+Azure Migrate
+Azure subscription to subscription migration 
+Azure Site Recovery (ASR)
+
+#step1:
+after appliance server configuration ===>copy the azure mobility agent from the appliance server to source server
+
+#step2:
+azure mobility& configuration agent installation and configuration, we need to have the Configuration server passphrase key, Ip address port number details
+
+#step3:
+source server services in  azure site recovery service running with automatic mode, if not running as excepted then restart the services
+
+#step4
+check the source server vm's are appearing properly under configuration server in azure portal  
+
+#step5:
+check target servers details are available in azure portal everything is okay then, initiate Replication in portal for the source server
+
+#step6:
+Go to azure portal ==> azure migrate ==> servers, databases and web apps ==> select project name==>check replication server is appearing or not
+the servers is appearing yes and after completion 100% it going to healthy state, then inform  to manager or architect replication process is done
+
+if replication server is appearing is not do the troubleshooting(connecting, service state )
+
+
+
+Home --> Recovery Services vaults --> choose the required project name (e.g.. azr-migrate-usa-project01-MigrateVault-123456789)
+
+--> click on the Replicated items --> click on replicate --> choose VMware and physical machine to azure --> choose the appliance server details
+--> choose the target server details -->source machine selection --> choose the disk types for the server --> review the details create
+
+
+
+#===>pre check process
+    #===>verifying and taking snipping of the hostname, IP address, ns-lookup, validate disk management and disk drive letters and Free space on Disks, system configuration,folders sharing, installed applications  , services state, creating local user as admin
+					  					  					  
+#===>test-failover
+    #====> need validate target details and subscription, region , resource group, storage account, vnet, subnet configured properly or not, target  IP address is available free or not as per Migration information file
+		#==>before migration need to Check and validate recovery points (App consistent must for DB & Critical Servers) is latest or not 
+ 
+===>failover
+
+Azure Migrate
+
+===> check the configuration and resource details correct or not  in azure portal and migrated vm
+
+
+Azure subscription to subscription migration 
+====>check the source resources and target resources are able access or not, target resources are created properly or not.
+ 
+1.VM Snapshot Creation to target Subscription
+
+   check in the azure portal source vm is running or not if vm is running then stop
+   -->Connect the VM through RDP and verify the Hostname and IP address --> Go to VM Disks you will get the attached disk details
+   -->Ensure the VM in Powered Off state -->Go to the disk’s and take the snapshot -->Select the target subscription, Resource Group name and provide the disk name as it is --> Select Snapshot type as ‘Full’, select Storage type as “Standard HDD” and click Next -->
+   
+2  snapshot to disks creation 
+3  os disk to vm creation process
+4  data disks adding to vm create
+5  validate vm is created with right target details
+
+=========================================>
+Migrating a server to Azure using Azure Migrate tool involves the following steps:
+
+Prepare the source environment: You need to prepare the server that you want to migrate by installing the Azure Migrate Dependency agent on it. This agent will collect data about the server's performance, applications, and dependencies.
+
+Create an Azure Migrate project: You will need to create an Azure Migrate project in your Azure subscription. This project will serve as a container for your migration and will allow you to track the progress of your migration.
+
+Discover and assess your servers: Using the Azure Migrate tool, you can discover and assess your servers by importing the performance data collected by the Dependency agent. This data will help you identify any issues that might affect the migration process.
+
+Create a migration plan: After assessing your servers, you can create a migration plan that outlines the steps needed to migrate your server to Azure. This plan should include details about the migration method, network configuration, and any other prerequisites.
+
+Test the migration: Before you proceed with the actual migration, it is recommended that you test the migration process on a test environment to identify any potential issues.
+
+Migrate your server: Once you have completed the migration plan and tested the migration process, you can proceed with the actual migration of your server to Azure.
+
+Validate the migration: After the migration is complete, you should validate that the server is functioning correctly in the Azure environment.
+
+Overall, Azure Migrate provides a comprehensive and automated way to migrate servers to Azure, reducing the complexity and risk associated with server migration.
